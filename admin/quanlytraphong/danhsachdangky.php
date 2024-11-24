@@ -24,6 +24,7 @@
 			<td><?php echo $row['TinhTrang']; ?></td>
 			<td><a href="index.php?action=quanlytraphong&view=chitietdangky&madk=<?php echo $row['MaDK']; ?>" >Detail </a></td>
 			<td><a href="quanlytraphong/xuly.php?action=duyet&madk=<?php echo  $row['MaDK']?>" >Duyệt <i class="fas fa-check"></i> </a></td>
+			<td><a href="quanlytraphong/xuly.php?action=xoa&madk=<?php echo  $row['MaDK']?>" ><i class="fas fa-backspace"></i></a></td>
 			
 		</tr>
  <?php	} ?>

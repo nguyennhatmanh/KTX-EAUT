@@ -38,7 +38,32 @@ if(isset($_GET['action'])){
             }
         }
 			break;
+			case 'xoa':
+				$madk=$_GET['madk'];
+				$admin=$_SESSION['nv_admin'];$manv=$admin['MaNV'];
+					  $sql="update chitietdangky set NgayTraPhong =NULL, TinhTrang=N'đã duyệt' where MaDK='$madk'";
+					  $rs=mysqli_query($conn,$sql);echo 'ok';
+					  if($rs){
+						echo "ok";
+						$sql1="select * from chitietdangky where MaDK=$madk";
+						$rs1=mysqli_query($conn,$sql1);
+						$row1=mysqli_fetch_array($rs1);
+						$masv=$row1['MaSV']; $manv=$row1['MaNV'];$map=$row1['MaPhong'];
+						date_default_timezone_set('Asia/Ho_Chi_Minh');
+						$date=getdate();
+						$ngay=$date['year']."-".$date['mon']."-".($date['mday']+3)." ".$date['hours'].":".$date['minutes'].":".$date['seconds'];
+						$td="Thông Báo Chuyển Phòng Ký Túc Xá";
+						$nd="Trả Phòng của bạn đã bị hủy. vui lòng lên gặp Nhân viên Ký túc xá để biết thêm chi tiết. Xin cảm ơn !!!";
+						
+						$sql2="INSERT INTO `thongbao`(`MaSV`, `MaNV`, `TieuDe`, `NoiDung`, `LoaiTB`) VALUES ($masv,'$manv','$td','$nd',N'trả phòng')";
+						$rs2=mysqli_query($conn,$sql2);echo $masv.$manv.$map.$ngay;
+						if($rs2){
+						  header('location:../index.php?action=quanlychuyenphong&view=quanlychuyenphong');
 		  
+						}   
+					  }
+				  
+				break;	  
      
 		default:
 			# code...

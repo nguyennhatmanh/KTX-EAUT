@@ -29,11 +29,19 @@ if(isset($_GET['action'])){
       $mk=$_GET['mk'];
       $tk=$_GET['tk'];
       $gt=$_GET['gt'];
+      $sql2= "select * from khu where MaKhu = '$mk'";
+      $rs2=mysqli_query($conn,$sql2);
+      $row2=mysqli_fetch_array($rs2);
+      $dem2=mysqli_num_rows($rs2);
+      if ($dem2 < 1){
         $sql="insert into khu( MaKhu, TenKhu, Sex ) values('$mk','$tk','$gt')" ;
         $rs=mysqli_query($conn,$sql);
         if($rs){
                   header('location:../index.php?action=khu&view=khu&thongbao=them');
         }
+      }else{
+        header('location:../index.php?action=khu&view=khu&thongbao=loi');
+      }
       break;  
 		default:
 			# code...

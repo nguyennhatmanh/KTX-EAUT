@@ -30,7 +30,7 @@
 				echo '<script>alert("Cập Nhật Thành Công .")</script>';
 				break;
 			case 'loi':
-				echo '<script>alert("Cập Nhật Thành Công .")</script>';
+				echo '<script>alert("Mã trùng! Yêu cầu nhập lại")</script>';
 				break;	
 			default:
 				# code...

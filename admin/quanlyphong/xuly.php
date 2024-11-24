@@ -32,11 +32,19 @@ if(isset($_GET['action'])){
       $mk=$_GET['mk'];
       $sntd=$_GET['sntd'];
       $gia=$_GET['gia'];
+      $sql2= "select * from phong where MaPhong = '$mp'";
+      $rs2=mysqli_query($conn,$sql2);
+      $row2=mysqli_fetch_array($rs2);
+      $dem2=mysqli_num_rows($rs2);
+      if ($dem2 < 1){
         $sql="insert into phong(MaPhong, MaKhu, SoNguoiToiDa, Gia ) values('$mp','$mk',$sntd,$gia)" ;
         $rs=mysqli_query($conn,$sql);
         if($rs){
                   header('location:../index.php?action=quanlyphong&view=quanlyphong&thongbao=them');
         }
+      }else{
+        header('location:../index.php?action=quanlyphong&view=quanlyphong&thongbao=loi');
+      }
       break;  
 		default:
 			# code...

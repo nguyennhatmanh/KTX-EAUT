@@ -48,9 +48,9 @@ if(isset($_POST['dangkyphong'])){
 	    	
 
 			
-	    }elseif ($row['GioiTinh']==='Nu') {
+	    }elseif ($row['GioiTinh']==='Nữ') {
 //tìm khu theo giới tính Nữ
-	    	$sql1="select MaKhu from Khu where Sex='Nu'";
+	    	$sql1="select MaKhu from Khu where Sex='Nữ'";
 	    	$rs1=mysqli_query($conn,$sql1); $loi=0;
 	    	while ($row1=mysqli_fetch_array($rs1)) {
 	    		$makhu=$row1['MaKhu'];

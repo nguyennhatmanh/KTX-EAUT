@@ -12,11 +12,19 @@ if(isset($_GET['action'])){
         $sdt=$_GET['sdt'];
         $mk=$_GET['pass'];
         $q=$_GET['q'];
+        $sql2= "select * from nhanvien where MaNV = '$manv'";
+        $rs2=mysqli_query($conn,$sql2);
+		    $row2=mysqli_fetch_array($rs2);
+		    $dem2=mysqli_num_rows($rs2);
+        if ($dem2 < 1){
         $sql="insert into nhanvien(MaNV,HoTen,NgaySinh,DiaChi,SDT,MatKhau,Quyen) value('$manv','$ten','$ns','$dc','$sdt','$mk','$q')" ;
         $rs=mysqli_query($conn,$sql);
           if($rs){
                     header('location:../index.php?action=nhanvien&view=all&thongbao=them');
           }
+        }else{
+          header('location:../index.php?action=nhanvien&view=all&thongbao=loi');
+        }
         break;
 		case 'capnhap':
   			$manv=$_GET['manv'];
