@@ -1,7 +1,6 @@
 <?php
 	$sql="select * from chitietdangky where TinhTrang='chưa duyệt' and NgayTraPhong is not null  Order  by NgayTraPhong DESC ";
 	$rs=mysqli_query($conn,$sql);
-	
 ?>
 <table class="table table-hover m-auto text-center" style="font-size: 13px;">
 	<thead class="badge-info">
@@ -24,16 +23,36 @@
 			<td><?php echo $row['TinhTrang']; ?></td>
 			<td><a href="index.php?action=quanlytraphong&view=chitietdangky&madk=<?php echo $row['MaDK']; ?>" >Detail </a></td>
 			<td><a href="quanlytraphong/xuly.php?action=duyet&madk=<?php echo  $row['MaDK']?>" >Duyệt <i class="fas fa-check"></i> </a></td>
-			<td><a href="quanlytraphong/xuly.php?action=xoa&madk=<?php echo  $row['MaDK']?>" ><i class="fas fa-backspace"></i></a></td>
-			
+			<td>
+				<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#huyTraPhongModal<?php echo $row['MaDK']; ?>">
+					<i class="fas fa-backspace"></i>
+				</button>
+				<div class="modal fade" id="huyTraPhongModal<?php echo $row['MaDK']; ?>" tabindex="-1" role="dialog" aria-labelledby="huyTraPhongModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="huyTraPhongModalLabel">Nhập lý do hủy trả phòng</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form action="quanlytraphong/xuly.php?action=xoa&madk=<?php echo $row['MaDK']; ?>" method="post">
+									<div class="form-group">
+										<label for="lyDoHuy">Lý do hủy:</label>
+										<textarea class="form-control" id="lyDoHuy" name="lyDoHuy" rows="3" required></textarea>
+									</div>
+									<button type="submit" class="btn btn-danger">Xác nhận hủy</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</td>
 		</tr>
  <?php	} ?>
-		
 	</tbody>
-
-
-
-<?php 
+<?php
 
 
 ?>

@@ -20,14 +20,14 @@
            <li class="nav-item">
               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sanpham" aria-expanded="true" aria-controls="sanpham">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Quản Lý Đăng Ký Phòng</span> 
+                <span>Quản Lý Đăng Ký Phòng</span>
               </a>
               <div id="sanpham" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                  <!-- <h6 class="collapse-header">Quản Lý Sản Phẩm</h6>-->
                   <a class="collapse-item" href="index.php?action=quanlydangkyphong&view=quanlydangkyphong">Xử Lý Đăng Ký</a>
                   <a class="collapse-item" href="index.php?action=quanlydangkyphong&view=danhsachall">Danh Sách Đã Xử Lý</a>
-                  
+
                 </div>
 
               </div>
@@ -40,9 +40,9 @@
               </a>
               <div id="danhmuc" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                 
+
                   <a class="collapse-item" href="index.php?action=quanlychuyenphong&view=quanlychuyenphong">Xử Lý Đ/K Chuyển Phòng</a>
-                
+
                 </div>
               </div>
             </li>
@@ -54,9 +54,9 @@
               </a>
               <div id="danhmuc1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                 
+
                   <a class="collapse-item" href="index.php?action=quanlytraphong&view=quanlytraphong">Xử Lý Đ/K Trả Phòng</a>
-                
+
                 </div>
               </div>
             </li>
@@ -67,7 +67,7 @@
                   <span>Quản Lý Tiền Điện Nước</span>
               </a>
               <div id="hoadon" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">          
+                <div class="bg-white py-2 collapse-inner rounded">
                   <a class="collapse-item" href="index.php?action=quanlydiennuoc&view=quanlydiennuoc">Thêm Tiền Điện Nước</a>
                 </div>
               </div>
@@ -79,9 +79,9 @@
               </a>
               <div id="phong" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                 
+
                   <a class="collapse-item" href="index.php?action=quanlyphong&view=quanlyphong">Phòng</a>
-                
+
                 </div>
               </div>
             </li>
@@ -92,9 +92,9 @@
               </a>
               <div id="khu" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                 
+
                   <a class="collapse-item" href="index.php?action=khu&view=khu">Khu</a>
-                
+
                 </div>
               </div>
             </li>
@@ -106,7 +106,7 @@
               </a>
               <div id="nv" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                  <a class="collapse-item" href="index.php?action=nhanvien&view=all">Tất Cả Nhân Viên</a>          
+                  <a class="collapse-item" href="index.php?action=nhanvien&view=all">Tất Cả Nhân Viên</a>
                 </div>
               </div>
             </li>
@@ -117,49 +117,32 @@
               </a>
               <div id="sv" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                  <a class="collapse-item" href="index.php?action=sinhvien&view=all">Tất Cả Sinh Viên</a>          
+                  <a class="collapse-item" href="index.php?action=sinhvien&view=all">Tất Cả Sinh Viên</a>
                 </div>
               </div>
             </li>
-           
-                    <!--   End Nav Item - Pages Collapse Menu 
-               <hr class="sidebar-divider">
-         <li class="nav-item">
-              <a class="nav-link" href="index.php?action=sanpham">
-                  <i class="fas fa-fw fa-chart-area"></i>
-                  <span>Sản Phẩm</span>
-              </a>
-            </li>
-             Nav Item - Tables -->
-           
-            <!-- Nav Item - Tables 
             <li class="nav-item">
-                <a class="nav-link" href="index.php?action=danhthu">
-                  <i class="fas fa-fw fa-table"></i>
-                  <span>Danh Thu</span>
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tt" aria-expanded="true" aria-controls="tt">
+                  <i class="fas fa-poll-h"></i>
+                  <span>Quản Lý Tin Tức</span>
               </a>
+              <div id="tt" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="index.php?action=tintuc&view=quanlytintuc">Danh Sách Tin Tức</a>
+                </div>
+              </div>
             </li>
-  
             <li class="nav-item">
-                <a class="nav-link" href="index.php?action=xldh">
-                  <i class="fas fa-fw fa-table"></i>
-                  <span>Xử lý đơn hàng</span>
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ph" aria-expanded="true" aria-controls="ph">
+                  <i class="fas fa-poll-h"></i>
+                  <span>Quản Lý Phản Hồi</span>
               </a>
+              <div id="ph" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="index.php?action=phanhoi&view=quanlyphanhoi">Xử Lý Phản Hồi</a>
+                  <a class="collapse-item" href="index.php?action=phanhoi&view=daphanhoi">Danh Sách Đã Phản Hồi</a>
+                </div>
+              </div>
             </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                  <i class="fas fa-fw fa-table"></i>
-                  <span>Shipper</span>
-              </a>
-            </li>
-             
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                  <i class="fas fa-fw fa-table"></i>
-                  <span>  </span>
-              </a>
-            </li>
-             Nav Item - Tables -->
       </ul>
      </div>

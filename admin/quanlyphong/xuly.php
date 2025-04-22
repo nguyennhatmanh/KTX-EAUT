@@ -17,14 +17,33 @@ if(isset($_GET['action'])){
         					header('location:../index.php?action=quanlyphong&view=quanlyphong&thongbao=sua');
         }
 			break;
-		  
+
       case 'xoa':
      $mp=$_GET['mp'];
-        $sql="delete from Phong where MaPhong='$mp'";
-        $rs=mysqli_query($conn,$sql);
-        if($rs){
-               header('location:../index.php?action=quanlyphong&view=quanlyphong&thongbao=xoa');
-        }
+     $bang_lien_quan = array("chitietdangky", "hoadondiennuoc");
+
+     $lien_quan = false;
+
+     // Kiểm tra từng bảng liên quan
+     foreach ($bang_lien_quan as $bang) {
+         $sql_check = "SELECT COUNT(*) FROM $bang WHERE MaPhong = '$mp'";
+         $result_check = mysqli_query($conn, $sql_check);
+         $row_check = mysqli_fetch_array($result_check);
+
+         if ($row_check[0] > 0) {
+             $lien_quan = true;
+             break; // Dừng kiểm tra nếu tìm thấy liên quan
+         }
+     }
+     if($lien_quan){
+       header('location:../index.php?action=quanlyphong&view=quanlyphong&thongbao=lienquan');
+     }else{
+       $sql="delete from Phong where MaPhong='$mp'";
+       $rs=mysqli_query($conn,$sql);
+       if($rs){
+             header('location:../index.php?action=quanlyphong&view=quanlyphong&thongbao=xoa');
+       }
+     }
       break;
 
     case 'them':

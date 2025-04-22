@@ -52,6 +52,7 @@
                 <button class="btn btn-lg btn-primary btn-block text-uppercase" name ="sv_capnhaptt" type="submit">Cập Nhật</button>
               <hr class="my-4">
             </form>
+            <a href="index.php?action=doimatkhau">Đổi mật khẩu?</a>
           </div>
         </div>
       </div>

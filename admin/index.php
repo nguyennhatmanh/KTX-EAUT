@@ -1,7 +1,7 @@
 
-<?php 	  
+<?php
   ob_start();
-  session_start(); 
+  session_start();
 	if(!isset($_SESSION['nv_admin'])){ header('location:login.php'); }
 
 	else {
@@ -31,11 +31,20 @@
 				break;
 			case 'loi':
 				echo '<script>alert("Mã trùng! Yêu cầu nhập lại")</script>';
-				break;	
+				break;
+			case 'lienquan':
+				echo '<script>alert("Không thể xóa vì còn dữ liệu liên quan")</script>';
+				break;
+			case 'guiphanhoithanhcong':
+				echo '<script>alert("Gửi phản hồi thành công về gmail của sinh viên!")</script>';
+				break;
+			case 'phanhoi_ok_no_email':
+				echo '<script>alert("Sinh viên chưa nhập email khi gửi phản hồi!")</script>';
+				break;
 			default:
 				# code...
 				break;
-		
+
 	}
 }
 

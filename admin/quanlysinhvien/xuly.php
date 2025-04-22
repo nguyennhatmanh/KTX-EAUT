@@ -38,13 +38,32 @@ if(isset($_GET['action'])){
           if($rs){
           					header('location:../index.php?action=sinhvien&view=all&thongbao=sua');
           }
-  			break;  
+  			break;
     case 'xoa':
         $masv=$_GET['masv'];
-        $sql="delete from sinhvien where MaSV='$masv'";
-        $rs=mysqli_query($conn,$sql);
-        if($rs){
-               header('location:../index.php?action=sinhvien&view=all&thongbao=xoa');
+        $bang_lien_quan = array("chitietdangky", "thongbao");
+
+        $lien_quan = false;
+
+        // Kiểm tra từng bảng liên quan
+        foreach ($bang_lien_quan as $bang) {
+            $sql_check = "SELECT COUNT(*) FROM $bang WHERE MaSV = '$masv'";
+            $result_check = mysqli_query($conn, $sql_check);
+            $row_check = mysqli_fetch_array($result_check);
+
+            if ($row_check[0] > 0) {
+                $lien_quan = true;
+                break; // Dừng kiểm tra nếu tìm thấy liên quan
+            }
+        }
+        if($lien_quan){
+          header('location:../index.php?action=sinhvien&view=all&thongbao=lienquan');
+        }else{
+          $sql="delete from sinhvien where MaSV='$masv'";
+          $rs=mysqli_query($conn,$sql);
+          if($rs){
+                header('location:../index.php?action=sinhvien&view=all&thongbao=xoa');
+          }
         }
       break;
 

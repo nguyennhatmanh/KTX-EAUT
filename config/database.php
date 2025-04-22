@@ -1,4 +1,5 @@
 <?php
+ define('SITEURL', 'http://localhost/KTX-EAUT/');
  header("Content-type: text/html; charset=utf-8");
  $tenmaychu='localhost';
  $tentaikhoan='root';

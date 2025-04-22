@@ -66,6 +66,7 @@ nav.menu li:hover .sub-menu{
 width: 200px;
  display: block;
  background: #edf0f2;
+ margin: 0 auto;
 }
 #menu ul {
  list-style-type: none;

@@ -17,7 +17,16 @@
 					<td><?php echo $row['MaSV'] ?></td><input hidden name="masv" value="<?php echo $row['MaSV'] ?>">
 					<td><input class="form-control form-control-sm" type="text" name="ten" value="<?php echo $row['HoTen'] ?>"></td>
 					<td><input  class="form-control form-control-sm" type="date" name="ns" value="<?php echo $row['NgaySinh'] ?>"></td>
-					<td><input  class="form-control form-control-sm" type="text" name="gt" value="<?php echo $row['GioiTinh'] ?>"></td>
+					<td>
+						<select class="form-control form-control-sm" name="gt" required>
+							<?php $t=$row['GioiTinh']; $s="select DISTINCT GioiTinh from SinhVien";$rs1=mysqli_query($conn,$s);
+                                while ($kq=mysqli_fetch_array($rs1)) { ?>
+                                    <option <?php  if($kq['GioiTinh']==$t){ echo 'selected="selected"' ;} ?> value="<?php  echo $kq['GioiTinh']; ?>"> <?php echo $kq['GioiTinh']; ?></option>
+                                <?php	}
+
+                                ?>
+						</select>
+					</td>
 					<td><input  class="form-control form-control-sm" type="text" name="dc" value="<?php echo $row['DiaChi'] ?>"></td>
 					<td><input  class="form-control form-control-sm" type="text" name="sdt" value="<?php echo $row['SDT'] ?>"></td>
 					<td><button  class="btn-sm btn-success btn" type="submit" name="action" value="capnhap">Cập Nhật</button></td>

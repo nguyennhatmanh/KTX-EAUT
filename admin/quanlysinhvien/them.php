@@ -7,18 +7,21 @@
 			</tr>
 		</thead>
 		<tbody>
-	
-				
 				<tr>
 					<td><input class="form-control form-control-sm" type="text"  name="masv" required></td>
 					<td><input  class="form-control form-control-sm" type="text" name="ten" required ></td>
 					<td><input  class="form-control form-control-sm" type="date" name="ns" required></td>
-					<td><input  class="form-control form-control-sm" type="text" name="gt" required></td>
+					<td>
+						<select class="form-control form-control-sm" name="gt" required>
+							<option value="Nam">Nam</option>
+							<option value="Nữ">Nữ</option>
+						</select>
+					</td>
 					<td><input  class="form-control form-control-sm" type="text" name="dc" required></td>
 					<td><input  class="form-control form-control-sm" type="text" name="sdt" required></td>
 					<td><input  class="form-control form-control-sm" type="password" name="mk" required></td>
 					<td><button  class="btn-sm btn-success btn" type="submit" name="action" value="them">Thêm</button></td>
-				</tr>	
+				</tr>
 		</tbody>
 </table>
 </form>	<br><hr>

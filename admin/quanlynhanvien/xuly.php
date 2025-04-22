@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once('../../config/database.php');
 if(isset($_GET['action'])){
@@ -38,14 +38,32 @@ if(isset($_GET['action'])){
           if($rs){
           					header('location:../index.php?action=nhanvien&view=all&thongbao=sua');
           }
-  			break;  
+  			break;
     case 'xoa':
         $manv=$_GET['manv'];
-        $sql="delete from nhanvien where MaNV='$manv'";
-        $rs=mysqli_query($conn,$sql);
-        if($rs){
+        $bang_lien_quan = array("chitietdangky", "thongbao", "tintuc");
 
-               header('location:../index.php?action=nhanvien&view=all&thongbao=xoa');
+        $lien_quan = false;
+
+        // Kiểm tra từng bảng liên quan
+        foreach ($bang_lien_quan as $bang) {
+            $sql_check = "SELECT COUNT(*) FROM $bang WHERE MaNV = '$manv'";
+            $result_check = mysqli_query($conn, $sql_check);
+            $row_check = mysqli_fetch_array($result_check);
+
+            if ($row_check[0] > 0) {
+                $lien_quan = true;
+                break; // Dừng kiểm tra nếu tìm thấy liên quan
+            }
+        }
+        if($lien_quan){
+          header('location:../index.php?action=nhanvien&view=all&thongbao=lienquan');
+        }else{
+          $sql="delete from nhanvien where MaNV='$manv'";
+          $rs=mysqli_query($conn,$sql);
+          if($rs){
+                header('location:../index.php?action=nhanvien&view=all&thongbao=xoa');
+          }
         }
       break;
 

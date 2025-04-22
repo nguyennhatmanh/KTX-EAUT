@@ -1,32 +1,37 @@
 
-<?php 
+<?php
 	if(isset($_GET['tb'])){
 			$tb = $_GET['tb'];
 			switch ($tb) {
 				case 'ok':
-				     echo '<script>alert("success!!!")</script>';
+				     echo '<script>alert("Thành công!!!")</script>';
 					break;
 				case 'loi':
 				     echo '<script>alert("Lỗi!!!")</script>';
-					break;	
+					break;
 				case 'ok1':
 				     echo '<script>alert("Đăng ký thành công. Nhân viên sẽ thông báo sau!!!")</script>';
 					break;
 				case 'ok2':
 				     echo '<script>alert("Đăng ký trả phòng thành công. Nhân viên sẽ kiểm tra và thông báo sau!!!")</script>';
-					break;	
+					break;
 				case 'loi1':
 				     echo '<script>alert("Vui lòng trả phòng đang ở trước khi đăng ký... Nếu bạn đã đăng ký trước đó vui lòng đợi, nhân viên sẽ thông báo sau !!!")</script>';
 					break;
-					
 				case 'loi2':
 				     echo '<script>alert("Lỗi!!!")</script>';
 					break;
 				case 'loi3':
 				     echo '<script>alert("Phòng đã hết. Vui lòng chọn phòng khác !!!")</script>';
-					break;									
+					break;
+				case 'khongkhop':
+					echo '<script>alert("Mật khẩu mới và xác nhận mật khẩu mới không khớp !")</script>';
+					break;
+				case 'saimatkhau':
+					echo '<script>alert("Mật khẩu cũ không đúng, yêu cầu nhập lại !")</script>';
+					break;
 				default:
-				 
+
 				break;
 		}
 	}
@@ -59,6 +64,21 @@
 				break;
 			case 'logout':
 			    include_once('view/logout.php');
+				break;
+			case 'doimatkhau':
+				include_once('view/doimatkhau.php');
+				break;
+			case 'tintucktx':
+				include_once('view/tintucktx.php');
+				break;
+			case 'chitiettintucktx':
+				include_once('view/chitiettintucktx.php');
+				break;
+			case 'timkiemtintuc':
+				include_once('view/timkiemtintuc.php');
+				break;
+			case 'guiphanhoi':
+				include_once('view/guiphanhoi.php');
 				break;
 			default:
 				 include_once('view/main.php');

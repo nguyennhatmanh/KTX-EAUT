@@ -1,4 +1,4 @@
-<?php	
+<?php
  	session_start();
 	ob_start();
 	include_once('../config/database.php');
@@ -17,10 +17,13 @@
 			case 'traphong':
 			    include_once('traphong.php');
 				break;
+			case 'doimatkhau':
+				include_once('doimatkhau.php');
+				break;
+			case 'guiphanhoi':
+				include_once('guiphanhoi.php');
+				break;
 			default:
-				
 				break;
 		}
 	}
-		
-	

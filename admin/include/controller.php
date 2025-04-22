@@ -4,23 +4,23 @@
       if(isset($_GET['action'])){
           $action=$_GET['action'];
           switch ($action) {
-                    case 'logout':  
+                    case 'logout':
                         header('location:logout.php');
                     case 'quanlydangkyphong':
                         include('quanlydangkyphong/main.php');
                         break;
                     case 'quanlychuyenphong':
                         include('quanlychuyenphong/main.php');
-                        break;  
+                        break;
                     case 'quanlydiennuoc':
                         include('quanlydiennuoc/main.php');
                         break;
                     case 'quanlyphong':
                         include('quanlyphong/main.php');
-                        break; 
+                        break;
                      case 'quanlytraphong':
                         include('quanlytraphong/main.php');
-                        break;  
+                        break;
                     case 'khu':
                         include('quanlykhu/main.php');
                         break;
@@ -29,10 +29,15 @@
                         break;
                     case 'sinhvien':
                         include('quanlysinhvien/main.php');
-                        break;                           
-                  
+                        break;
+                    case 'tintuc':
+                        include('quanlytintuc/main.php');
+                        break;
+                    case 'phanhoi':
+                        include('quanlyphanhoi/main.php');
+                        break;
                     default:
-                         
+
                         break;
                 }
       }

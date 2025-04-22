@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once('../../config/database.php');
 if(isset($_GET['action'])){
@@ -14,15 +14,33 @@ if(isset($_GET['action'])){
         					header('location:../index.php?action=khu&view=khu&thongbao=sua');
         }
 			break;
-		  
+
       case 'xoa':
      $mk=$_GET['mk'];;
-        $sql="delete from Khu where MaKhu='$mk'";
-        $rs=mysqli_query($conn,$sql);
-        if($rs){
+     $bang_lien_quan = array("phong");
 
-               header('location:../index.php?action=khu&view=khu&thongbao=xoa');
-        }
+     $lien_quan = false;
+
+     // Kiểm tra từng bảng liên quan
+     foreach ($bang_lien_quan as $bang) {
+         $sql_check = "SELECT COUNT(*) FROM $bang WHERE MaKhu = '$mk'";
+         $result_check = mysqli_query($conn, $sql_check);
+         $row_check = mysqli_fetch_array($result_check);
+
+         if ($row_check[0] > 0) {
+             $lien_quan = true;
+             break; // Dừng kiểm tra nếu tìm thấy liên quan
+         }
+     }
+     if($lien_quan){
+       header('location:../index.php?action=khu&view=khu&thongbao=lienquan');
+     }else{
+       $sql="delete from Khu where MaKhu='$mk'";
+       $rs=mysqli_query($conn,$sql);
+       if($rs){
+             header('location:../index.php?action=khu&view=khu&thongbao=xoa');
+       }
+     }
       break;
 
     case 'them':

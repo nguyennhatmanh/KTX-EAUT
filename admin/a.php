@@ -13,14 +13,14 @@
 		<h2>
 			Đây là trang ADMIN Ký Túc Xá - Đại Học Công Nghệ Đông Á !!!
 		</h2>
-		<br>
-		<h4 class="text-center">Thống Kê Dữ Liệu</h4>
-		<br>
-			<div class="text-center">
+		<br><br>
+		<h3 class="text-center text-uppercase">Thống kê dữ liệu</h3>
+        <div class="d-flex justify-content-center align-items-center w-100">
+			<div class="p-4 text-center">
 				<br>
-				Sinh Viên
+				Số đơn đăng ký phòng chờ xử lý
                 <?php
-                    $sql = "SELECT * FROM sinhvien";
+                    $sql = "select * from chitietdangky where TinhTrang='chưa duyệt' and NgayDangKy is not null and NgayTraPhong is null Order by NgayDangKy DESC";
 
                     $res = mysqli_query($conn , $sql);
 
@@ -28,11 +28,11 @@
                 ?>
                 <h1><?php echo $count;?></h1>
             </div>
-			<div class="text-center">
+			<div class="p-4 text-center">
 				<br>
-				Phòng
+				Số đơn đăng ký chuyển phòng chờ xử lý
                 <?php
-                    $sql = "SELECT * FROM phong";
+                    $sql = "select * from chitietchuyenphong where TinhTrang='chưa duyệt' Order  by NgayDangKy DESC ";
 
                     $res = mysqli_query($conn , $sql);
 
@@ -40,11 +40,11 @@
                 ?>
                 <h1><?php echo $count;?></h1>
             </div>
-			<div class="text-center">
+			<div class="p-4 text-center">
 				<br>
-				Khu
+				Số đơn đăng ký trả phòng chờ xử lý
                 <?php
-                    $sql = "SELECT * FROM khu";
+                    $sql = "select * from chitietdangky where TinhTrang='chưa duyệt' and NgayTraPhong is not null  Order  by NgayTraPhong DESC ";
 
                     $res = mysqli_query($conn , $sql);
 
@@ -52,21 +52,20 @@
                 ?>
                 <h1><?php echo $count;?></h1>
             </div>
-			<div class="text-center">
+			<div class="p-4 text-center">
 				<br>
-				Tổng Tiền Điện Nước
+				Số lượng phản hồi chờ xử lý
                 <?php
-                    $sql4 = "SELECT SUM(TienDien)+SUM(TienNuoc) AS total FROM hoadondiennuoc";
+                    $sql = "SELECT * FROM phanhoi WHERE TrangThai = 'Đang xử lý' ORDER BY ngaytao DESC";
 
-                    $res4 = mysqli_query($conn , $sql4);
+                    $res = mysqli_query($conn , $sql);
 
-                    $row=mysqli_fetch_array($res4);
+					$count = mysqli_num_rows($res);
 
-					$count = $row['total'];
-					
                 ?>
-                <h1><?php echo $count. " Đ";?></h1>
+                <h1><?php echo $count;?></h1>
             </div>
+        </div>
 	</div>
 </body>
 </html>
