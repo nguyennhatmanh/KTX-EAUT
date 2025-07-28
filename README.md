@@ -10,10 +10,13 @@ Các chức năng chính của website:
 
 Một số hình ảnh giao diện của website
 - Giao diện chức năng đăng ký phòng phía người dùng
+
 <img width="974" height="526" alt="image" src="https://github.com/user-attachments/assets/79107bb2-a994-4b24-adb2-970253edf104" />
 - Giao diện chức năng gửi phản hồi phía người dùng
+
 <img width="974" height="649" alt="image" src="https://github.com/user-attachments/assets/6b16a282-b0f0-453b-8831-ac1b00aaa410" />
 - Giao diện chức năng xử lý phản hồi phía quản lý
+
 <img width="974" height="591" alt="image" src="https://github.com/user-attachments/assets/c5deda14-3063-4362-9688-1d0fc81881af" />
 
 
