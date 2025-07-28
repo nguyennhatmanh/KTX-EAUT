@@ -1,4 +1,4 @@
-<img width="974" height="649" alt="image" src="https://github.com/user-attachments/assets/0545fcf7-9b7c-4529-aa84-cef5a89bce8e" />Hướng dẫn chạy:
+Hướng dẫn chạy:
 - Tải ứng dụng XAMPP và Visual Studio Code về để chạy
 - Vào ứng dụng XAMPP ấn vào nút "Admin" bên cạnh Module MySQL và Import database mới nhất trong Thư mục database
 ![image](https://github.com/user-attachments/assets/44e8400a-a0a4-4909-80f4-4e6f0af0ea21)
